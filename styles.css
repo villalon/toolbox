@@ -1,0 +1,104 @@
+/** CSS ToolBox General **/
+
+a{color:#ffffff;}
+
+
+
+
+
+#page-local-uai_toolbox-view .maintoolbox {		    
+    float: center;
+	font-size: 12px;
+}
+
+#page-local-uai_toolbox-view .maintoolbox label {		    
+    width: 200px;
+}
+
+#page-local-uai_toolbox-view .gridCursos {		    
+    border-collapse: collapse;
+    padding: 10px 10px 10px 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#page-local-uai_toolbox-view .gridCursos td {		    
+    border: 1px solid #333333;
+	font-size: 12px;
+	padding: 3px 7px 2px;
+}
+
+#page-local-uai_toolbox-view .gridCursos .c1,.c2,.c3 {		    
+    width: 200px;
+    text-align: center;
+}
+
+#page-local-uai_toolbox-view .gridCursos .gridCursosHeader {		    
+    background-color: #333333;
+	color: white;
+	font-size: 14px;
+	padding-bottom: 4px;
+	padding-top: 5px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+#page-local-uai_toolbox-view .tablaRanking {		    
+    border-collapse: collapse;
+    padding: 10px 10px 10px 10px;
+    border-style: solid;
+    border-width: 1px;
+    width: 600px;
+}
+
+#page-local-uai_toolbox-view .tablaRanking td {		    
+    border: 1px solid #333333;
+	font-size: 12px;
+	padding: 3px 7px 2px;
+}
+
+#page-local-uai_toolbox-view .tablaRanking .r0 {
+	background-color: #FFFFFF;
+}
+
+#page-local-uai_toolbox-view .tablaRanking .r1 {
+	background-color: #FFFFFF;
+}
+
+#page-local-uai_toolbox-view .tablaRanking .tablaRankingHeader {		    
+    background-color: #333333;
+	color: white;
+	font-size: 14px;
+	padding-bottom: 4px;
+	padding-top: 5px;
+	text-align: left;
+}
+
+#page-local-uai_toolbox-view .tablaRanking .tablaRankingMiFila {		    
+    background-color: #FFFFFF;
+}
+
+#page-local-uai_toolbox-view .tablaScrollPage {		    
+    width: 400px;
+}
+
+#page-local-uai_toolbox-view .scrollLeft {		    
+    float: left;
+}
+
+#page-local-uai_toolbox-view .scrollRight {		    
+    float: right;
+}
+
+#page-local-uai_toolbox-view .descripcion {		    
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+
+#page-local-uai_toolbox-view .logos {
+	background-color: #FFFFFF;
+    border-width: 0px;
+}

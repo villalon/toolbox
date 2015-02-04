@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<XMLDB PATH="local/uai_toolbox/db" VERSION="2012100800" COMMENT="XML for Toolbox." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+	<TABLES>
+		<TABLE NAME="local_uai_toolbox_score" COMMENT="(id_score,id_facultad,id_curso,id_tool,id_profesor,puntaje)">
+			<FIELDS>
+				<FIELD NAME="id_score" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="true" NEXT="id_facultad" /> 
+				<FIELD NAME="id_facultad" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_score" NEXT="id_curso" /> 
+				<FIELD NAME="id_curso" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_facultad" NEXT="id_tool" /> 
+				<FIELD NAME="id_tool" TYPE="char" LENGTH="255" ENUM="true" ENUMVALUES="'Foro','Cuestionario','Calificacion'" NOTNULL="false" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id_curso" NEXT="id_profesor" /> 
+				<FIELD NAME="id_profesor" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_tool" NEXT="puntaje" /> 
+				<FIELD NAME="puntaje" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_profesor"  />  
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="id_score" TYPE="primary" FIELDS="id_score" /> 
+			</KEYS>
+		</TABLE>
+	</TABLES>
+</XMLDB>
