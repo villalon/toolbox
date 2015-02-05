@@ -172,7 +172,7 @@ function get_img_source($score){
     	global $CFG;
     	
     	$final_score = round((float)$score);
-    	$ruta = $CFG->wwwroot.'/local/uai_toolbox/';
+    	$ruta = $CFG->wwwroot.'/local/toolbox/';
     	
     	switch ($final_score){
     		case 0:
@@ -217,7 +217,7 @@ function get_cursos($userId = ''){
 									INNER JOIN {role} ON ({role_assignments}.roleid = {role}.id)
 									WHERE {course}.id =".$idCurso." AND {role_assignments}.userid =".$userId);
 		$foro = $DB->get_field_sql("SELECT Distinct puntaje
-									FROM {local_uai_toolbox_score}
+									FROM {local_toolbox_score}
 									WHERE id_tool = 'Foro' AND id_curso =".$idCurso);
 		
 		if(!isset($foro)){

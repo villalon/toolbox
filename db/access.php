@@ -5,7 +5,7 @@
 // We define a new capability, the ability to modify the toolbox
 $capabilities = array(
 
-    'local/uai_toolbox:viewtoolboxmanager' => array(
+    'local/toolbox:viewtoolboxmanager' => array(
     	// Capability type (write, read, etc.)
         'captype' => 'read',
         // Context in which the capability can be set (course, category, etc.)
@@ -17,7 +17,7 @@ $capabilities = array(
             'manager' => CAP_ALLOW,
 			'student'=>CAP_PROHIBIT)),
 
-	'local/uai_toolbox:viewtoolboxstudent'=> array(
+	'local/toolbox:viewtoolboxstudent'=> array(
 		'captype' => 'read',
 		'contextlevel' =>CONTEXT_SYSTEM,
 		'legacy' => array(
@@ -25,7 +25,7 @@ $capabilities = array(
 			'student'=>CAP_ALLOW,
 'teacher' => CAP_ALLOW)),
 
-	'local/uai_toolbox:viewtoolboxteacher' => array(
+	'local/toolbox:viewtoolboxteacher' => array(
     	// Capability type (write, read, etc.)
         'captype' => 'read',
         // Context in which the capability can be set (course, category, etc.)
@@ -37,7 +37,7 @@ $capabilities = array(
             'manager' => CAP_ALLOW,
             'student'=>CAP_PROHIBIT)),
 
-'local/uai_toolbox:viewtoolboxuser' => array(
+'local/toolbox:viewtoolboxuser' => array(
     	// Capability type (write, read, etc.)
         'captype' => 'read',
         // Context in which the capability can be set (course, category, etc.)

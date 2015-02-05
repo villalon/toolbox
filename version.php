@@ -28,4 +28,4 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->version = 2015012300; 
 $plugin->cron = 10;
 $plugin->requires = 2010021900;
-$plugin->component = 'local_uai_toolbox';
+$plugin->component = 'local_toolbox';

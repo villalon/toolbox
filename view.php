@@ -12,7 +12,7 @@
 global $USER, $CFG;
 require_once('../../config.php');
 require_once($CFG->dirroot.'/course/lib.php');
-require_once($CFG->dirroot.'/local/uai_toolbox/lib.php');
+require_once($CFG->dirroot.'/local/toolbox/lib.php');
 
 /*
 optional_param() Similar a $_Require pero realiza un chequeo de la variable.
@@ -23,7 +23,7 @@ $view = optional_param('view', 'miscursos', PARAM_ALPHA);
 $page = optional_param('page', 0, PARAM_INT);
 $rank = optional_param('rank', 0, PARAM_INT);
 $site = get_site();
-$url = new moodle_url('/local/uai_toolbox/view.php');
+$url = new moodle_url('/local/toolbox/view.php');
 
 if ($idProfesor !== 0) {
     $url->param('idProfesor', $idProfesor);
@@ -41,7 +41,7 @@ if ($rank !== 0) {
     $url->param('rank', $rank);
 }
 
-$pagetitle = get_string('pagetitle', 'local_uai_toolbox');
+$pagetitle = get_string('pagetitle', 'local_toolbox');
 //$context = get_context_instance(CONTEXT_USER,$USER->id);
 //reemplazado dado que ya esa función se reemplazó por la siguiente:
 $context = context_user::instance($USER->id);
@@ -53,24 +53,24 @@ $PAGE->set_title("$site->shortname: $pagetitle");
 
 switch ($view){
 	case 'miscursos':
-		$toolname = get_string('miscursos', 'local_uai_toolbox');
-		$desc = get_string('descripcionmiscursos', 'local_uai_toolbox');
+		$toolname = get_string('miscursos', 'local_toolbox');
+		$desc = get_string('descripcionmiscursos', 'local_toolbox');
 		break;
 	case 'ranking':
-		$toolname = get_string('ranking', 'local_uai_toolbox');
-		$desc = get_string('descripcionranking', 'local_uai_toolbox');
+		$toolname = get_string('ranking', 'local_toolbox');
+		$desc = get_string('descripcionranking', 'local_toolbox');
 		break;
 	case 'acerca':
-		$toolname = get_string('acerca','local_uai_toolbox');
-		$desc = get_string('descripcionacerca','local_uai_toolbox');
+		$toolname = get_string('acerca','local_toolbox');
+		$desc = get_string('descripcionacerca','local_toolbox');
 		break;   
 	case 'profesores':
-		$toolname = get_string('profesores', 'local_uai_toolbox');
-		$desc = get_string('descripcionprofesores', 'local_uai_toolbox');
+		$toolname = get_string('profesores', 'local_toolbox');
+		$desc = get_string('descripcionprofesores', 'local_toolbox');
 		break;
 	case 'facultades':
-		$toolname = get_string('facultades', 'local_uai_toolbox');
-		$desc = get_string('descripcionfacultades', 'local_uai_toolbox');
+		$toolname = get_string('facultades', 'local_toolbox');
+		$desc = get_string('descripcionfacultades', 'local_toolbox');
 		break;
 	default:
 		error("Opción invalida");
@@ -80,7 +80,7 @@ switch ($view){
 $PAGE->navbar->add($toolname);
 $PAGE->set_heading($pagetitle.': '.$toolname);
 $PAGE->set_pagelayout('standard');
-$renderer = $PAGE->get_renderer('local_uai_toolbox');
+$renderer = $PAGE->get_renderer('local_toolbox');
 
 echo $OUTPUT->header();
 echo $renderer->start_layout();
@@ -99,7 +99,7 @@ switch ($view){
 			$ranking = get_ranking($idFacultad);
 			$facultades = get_facultades();
 			$totalCount = count($ranking);
-			echo $renderer->show_barrauai_toolbox($facultades, $view, get_string('facultad', 'uai_toolbox'), $idFacultad,'', 'Universidad');
+			echo $renderer->show_barrauai_toolbox($facultades, $view, get_string('facultad', 'local_toolbox'), $idFacultad,'', 'Universidad');
 			echo $renderer->show_ranking($ranking, $view, 'Profesor', $page, $rank, $idFacultad,$pageCount);
 			if($rank != 0){
 				$page = floor($rank/$pageCount);

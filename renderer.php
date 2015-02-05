@@ -10,12 +10,12 @@
  */
 
 require_once('../../config.php');
-require_once($CFG->dirroot.'/local/uai_toolbox/lib.php');
+require_once($CFG->dirroot.'/local/toolbox/lib.php');
 
 /**
  * El renderizador primario para el ToolBox.
  */
-class local_uai_toolbox_renderer extends plugin_renderer_base {
+class local_toolbox_renderer extends plugin_renderer_base {
 	
     /**
      * Inicio del layout standard para la p�gina     *
@@ -49,10 +49,10 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
     	$grid->data[0] = new html_table_row();
     	$grid->data[0]->attributes['class'] .= 'gridCursosHeader';
 
-    	$grid->data[0]->cells[0] = new html_table_cell(get_string('c/h','local_uai_toolbox'));
-    	$grid->data[0]->cells[1] = new html_table_cell(html_writer::tag('a', get_string('foros','local_uai_toolbox'), array('href'=>'http://webcursos.cloudlab.cl/mod/page/view.php?id=334191','style'=>'color:#fff;')));
-    	$grid->data[0]->cells[2] = new html_table_cell(html_writer::tag('a', get_string('cuestionarios','local_uai_toolbox'), array('href'=>'http://webcursos.cloudlab.cl/mod/page/view.php?id=334156','style'=>'color:#fff;')));
-    	$grid->data[0]->cells[3] = new html_table_cell(html_writer::tag('a', get_string('calificaciones','local_uai_toolbox'), array('href'=>'http://webcursos.cloudlab.cl/mod/page/view.php?id=355417','style'=>'color:#fff;')));
+    	$grid->data[0]->cells[0] = new html_table_cell(get_string('c/h','local_toolbox'));
+    	$grid->data[0]->cells[1] = new html_table_cell(html_writer::tag('a', get_string('foros','local_toolbox'), array('href'=>'http://webcursos.cloudlab.cl/mod/page/view.php?id=334191','style'=>'color:#fff;')));
+    	$grid->data[0]->cells[2] = new html_table_cell(html_writer::tag('a', get_string('cuestionarios','local_toolbox'), array('href'=>'http://webcursos.cloudlab.cl/mod/page/view.php?id=334156','style'=>'color:#fff;')));
+    	$grid->data[0]->cells[3] = new html_table_cell(html_writer::tag('a', get_string('calificaciones','local_toolbox'), array('href'=>'http://webcursos.cloudlab.cl/mod/page/view.php?id=355417','style'=>'color:#fff;')));
     	
     	$row = 1;
     	foreach ($datos as $idCurso => $dato){
@@ -91,10 +91,10 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
     	$tutorial[0][2] = html_writer::empty_tag('img', array('src' => get_img_source('2'), 'alt' => 'Avanzado', 'title' => 'Avanzado'));
     	$tutorial[0][3] = html_writer::empty_tag('img', array('src' => get_img_source('3'), 'alt' => 'Experto', 'title' => 'Experto'));
     	
-    	$tutorial[1][0] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('basico','local_uai_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
-    	$tutorial[1][1] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('intermedio','local_uai_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
-    	$tutorial[1][2] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('avanzado','local_uai_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
-    	$tutorial[1][3] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('experto','local_uai_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
+    	$tutorial[1][0] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('basico','local_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
+    	$tutorial[1][1] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('intermedio','local_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
+    	$tutorial[1][2] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('avanzado','local_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
+    	$tutorial[1][3] = html_writer::start_tag('center').html_writer::start_tag('b').get_string('experto','local_toolbox') .html_writer::end_tag('b').html_writer::end_tag('center');
     	
     	$logos = new html_table();
     	$logos->attributes = array('class'=>'logos');
@@ -126,13 +126,13 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
         $output .=html_writer::start_tag('table');
     	$output .= html_writer::start_tag('tr');
     	$output .= html_writer::empty_tag('td');
-        $output .= html_writer::tag('a', ''.get_string('basico','uai_toolbox'), array('style'=>'color:#000;'));
+        $output .= html_writer::tag('a', ''.get_string('basico','local_toolbox'), array('style'=>'color:#000;'));
         $output .= html_writer::empty_tag('td');
-        $output .= html_writer::tag('a', ''.get_string('intermedio','uai_toolbox'), array('style'=>'color:#000;'));
+        $output .= html_writer::tag('a', ''.get_string('intermedio','local_toolbox'), array('style'=>'color:#000;'));
         $output .= html_writer::empty_tag('td');
-        $output .= html_writer::tag('a', ''.get_string('avanzado','uai_toolbox'), array('style'=>'color:#000;'));
+        $output .= html_writer::tag('a', ''.get_string('avanzado','local_toolbox'), array('style'=>'color:#000;'));
         $output .= html_writer::empty_tag('td');
-        $output .= html_writer::tag('a',''.get_string('experto','uai_toolbox'), array('style'=>'color:#000;'));
+        $output .= html_writer::tag('a',''.get_string('experto','local_toolbox'), array('style'=>'color:#000;'));
         $output .= html_writer::empty_tag('td');
         $output .= html_writer::end_tag('tr');
     	$output .= html_writer::end_tag('table');
@@ -172,12 +172,12 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
     	}
     	
     	if($view == 'ranking'){
-    		$ruta = $CFG->wwwroot.'/local/uai_toolbox/view.php?view='.$view.'&idFacultad=';
+    		$ruta = $CFG->wwwroot.'/localtoolbox/view.php?view='.$view.'&idFacultad=';
     	}else{
     		if($text == 'Profesor'){
-    			$ruta = $CFG->wwwroot.'/local/uai_toolbox/view.php?view=profesores&idFacultad='.$idExtra.'&idProfesor=';
+    			$ruta = $CFG->wwwroot.'/local/toolbox/view.php?view=profesores&idFacultad='.$idExtra.'&idProfesor=';
     		}else{
-    			$ruta = $CFG->wwwroot.'/local/uai_toolbox/view.php?view=profesores&idProfesor='.$idExtra.'&idFacultad=';
+    			$ruta = $CFG->wwwroot.'/local/toolbox/view.php?view=profesores&idProfesor='.$idExtra.'&idFacultad=';
     		}
     	}
     	
@@ -190,12 +190,12 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
    
 	    if($selectedId == '' && !empty($ranking['uai']))
 	    {		       	
-	    	$output .= html_writer::label(''.get_string('miranking','uai_toolbox').'', null,'FALSE',array('style'=>'font-weight:bold;')); 
+	    	$output .= html_writer::label(''.get_string('miranking','local_toolbox').'', null,'FALSE',array('style'=>'font-weight:bold;')); 
 	    	$output .= html_writer::label($ranking['uai'], null,'FALSE',array('style'=>'font-weight:bold;'));		    	  	
 	    }
 	    elseif(!empty($ranking['facultad']) && $selectedId == $ranking['idfacultad'])
 	    {
-	    	$output .= html_writer::label(''.get_string('miranking','uai_toolbox').'', null,'FALSE',array('style'=>'font-weight:bold;')); 
+	    	$output .= html_writer::label(''.get_string('miranking','local_toolbox').'', null,'FALSE',array('style'=>'font-weight:bold;')); 
 	       	$output .= html_writer::label($ranking['facultad'], null,'FALSE',array('style'=>'font-weight:bold;'));	 	
 	    }
     
@@ -254,11 +254,11 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
     	
     	$cell = 0;
     	
-    	$table->data[0]->cells[$cell] = new html_table_cell(get_string('ranking','uai_toolbox'));
+    	$table->data[0]->cells[$cell] = new html_table_cell(get_string('ranking','local_toolbox'));
     	$cell++;    	    
-    	$table->data[0]->cells[$cell] = new html_table_cell(get_string('profesor','uai_toolbox'));
+    	$table->data[0]->cells[$cell] = new html_table_cell(get_string('profesor','local_toolbox'));
     	$cell++;
-    	$table->data[0]->cells[$cell] = new html_table_cell(get_string('nivel','uai_toolbox'));
+    	$table->data[0]->cells[$cell] = new html_table_cell(get_string('nivel','local_toolbox'));
     	$cell++;
     	
     	$row = 1;
@@ -325,9 +325,9 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
     {
 	
     global $CFG;
-    $ruta = $CFG->wwwroot.'/local/uai_toolbox/';
+    $ruta = $CFG->wwwroot.'/local/toolbox/';
 	/**
-	 * Esta funci�n contiene una tabla en la cual est� un texto de desprici�n del bloque y tambi�n una im�gen. El texto est� dentro de un string en uai_toolbox.php en la carpeta lang. 
+	 * Esta funci�n contiene una tabla en la cual est� un texto de desprici�n del bloque y tambi�n una im�gen. El texto est� dentro de un string en toolbox.php en la carpeta lang. 
 	 * El array est� vac�o dado que no se necesita datos, solo texto e imagenes. 
 	 * @param $table Crea la tabla .
 	 * @param $output Se asigna el tag que se pondr� en la tabla, considerando tambi�n el contenido.
@@ -335,7 +335,7 @@ class local_uai_toolbox_renderer extends plugin_renderer_base {
 	 */
     
     $output =html_writer::start_tag('div');
-    $output .= get_string('about_content','local_uai_toolbox');
+    $output .= get_string('about_content','local_local_toolbox');
     $output .=html_writer::end_tag('div');
   
      return $output;

@@ -10,7 +10,7 @@ $prefix = $CFG->prefix;
 $sqlCreate="
 CREATE PROCEDURE getCursosScore()
 BEGIN
-	CREATE TABLE IF NOT EXISTS ".$prefix."local_uai_toolbox_score(
+	CREATE TABLE IF NOT EXISTS ".$prefix."local_toolbox_score(
 	id_score INT AUTO_INCREMENT NOT NULL,
 	id_facultad INT NOT NULL,
 	id_curso INT NOT NULL,
@@ -20,10 +20,10 @@ BEGIN
 	PRIMARY KEY(id_score))
 	ENGINE = InnoDB;
 	
-	TRUNCATE TABLE ".$prefix."local_uai_toolbox_score;
+	TRUNCATE TABLE ".$prefix."local_toolbox_score;
 	
 
-	INSERT INTO ".$prefix."local_uai_toolbox_score(id_curso, Puntaje, id_tool, id_facultad, id_profesor) SELECT cid,
+	INSERT INTO ".$prefix."local_toolbox_score(id_curso, Puntaje, id_tool, id_facultad, id_profesor) SELECT cid,
 
     case
         when avg(participacion) > 0.8 then 3

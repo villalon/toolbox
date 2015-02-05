@@ -34,21 +34,21 @@ $PAGE->set_context($context);
 
 
 $urlparams = array();
-$baseurl = new moodle_url('/local/uai_toolbox/execron.php', $urlparams);
+$baseurl = new moodle_url('/local/toolbox/execron.php', $urlparams);
 $PAGE->set_url($baseurl);
 
 
-$strmanage = get_string('cron', 'uai_toolbox');
+$strmanage = get_string('cron', 'local_toolbox');
 
 $PAGE->set_pagelayout('standard');
 $PAGE->set_title($strmanage);
 $PAGE->set_heading($strmanage);
 
 $settingsurl = new moodle_url('/admin/settings.php?section=localsettingtoolbox');
-$managefeeds = new moodle_url('/local/uai_toolbox/execron.php', $urlparams);
+$managefeeds = new moodle_url('/local/toolbox/execron.php', $urlparams);
 $PAGE->navbar->add(get_string('local'));
-$PAGE->navbar->add(get_string('cron', 'uai_toolbox'), $settingsurl);
-$PAGE->navbar->add(get_string('cronnow', 'uai_toolbox'), $managefeeds);
+$PAGE->navbar->add(get_string('cron', 'local_toolbox'), $settingsurl);
+$PAGE->navbar->add(get_string('cronnow', 'local_toolbox'), $managefeeds);
 echo $OUTPUT->header();
  
 /*
@@ -57,7 +57,7 @@ echo $OUTPUT->header();
  * recalculate the scores. 
  */
 
-require_once($CFG->dirroot.'/local/uai_toolbox/db/procedure.php');
+require_once($CFG->dirroot.'/local/toolbox/db/procedure.php');
 
    if($db = mysqli_connect($CFG->dbhost,$CFG->dbuser,$CFG->dbpass))
 {
@@ -69,9 +69,9 @@ require_once($CFG->dirroot.'/local/uai_toolbox/db/procedure.php');
 	   if ($result = mysqli_query($db,"CALL getCursosScore"))
 	   {
 			echo "<br>";
-			echo "<p>". get_string('success','uai_toolbox')."</p>"; 
+			echo "<p>". get_string('success','local_toolbox')."</p>"; 
 			echo "<br>";
-			echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'uai_toolbox'), 'get') . '</div>';
+			echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'local_toolbox'), 'get') . '</div>';
 
 			echo $OUTPUT->footer();
 
@@ -81,9 +81,9 @@ require_once($CFG->dirroot.'/local/uai_toolbox/db/procedure.php');
 			else 
 		{
 			echo "<br>";
-			echo "<p>". get_string('failureone','uai_toolbox')."</p>"; 
+			echo "<p>". get_string('failureone','local_toolbox')."</p>"; 
 			echo "<br>";
-			echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'uai_toolbox'), 'get') . '</div>';
+			echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'local_toolbox'), 'get') . '</div>';
 
 			echo $OUTPUT->footer();
 
@@ -93,9 +93,9 @@ require_once($CFG->dirroot.'/local/uai_toolbox/db/procedure.php');
 			else
 			  {
 				echo "<br>";	
-				echo "<p>". get_string('failuretwo','uai_toolbox')."</p>";  
+				echo "<p>". get_string('failuretwo','local_toolbox')."</p>";  
 				echo "<br>";
-				echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'uai_toolbox'), 'get') . '</div>';
+				echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'local_toolbox'), 'get') . '</div>';
 
 				echo $OUTPUT->footer();
 
@@ -103,6 +103,6 @@ require_once($CFG->dirroot.'/local/uai_toolbox/db/procedure.php');
 			  }
 
       
-	echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'uai_toolbox'), 'get') . '</div>';
+	echo '<div class="backlink">' . $OUTPUT->single_button($settingsurl, get_string('back', 'local_toolbox'), 'get') . '</div>';
 
 	echo $OUTPUT->footer();
