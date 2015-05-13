@@ -41,10 +41,10 @@ $string['minivel'] = 'Mi Nivel: ';
 $string['minivelstudent'] = 'Nivel de mis cursos: ';
 $string['miranking'] = 'Mi Ranking: ';
 $string['mirankingde'] = ' de ';
-$string['local_toolbox:viewtoolboxmanager'] = 'view manager toolbox';
-$string['local_toolbox:viewtoolboxstudent'] = 'view student toolbox';
-$string['local_toolbox:viewtoolboxteacher'] = 'view teacher tollbox';
-$string['local_toolbox:viewtoolboxuser'] = 'view user toolbox';
+$string['toolbox:viewtoolboxmanager'] = 'view manager toolbox';
+$string['toolbox:viewtoolboxstudent'] = 'view student toolbox';
+$string['toolbox:viewtoolboxteacher'] = 'view teacher tollbox';
+$string['toolbox:viewtoolboxuser'] = 'view user toolbox';
 
 /**
 renderer.php
