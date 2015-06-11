@@ -31,7 +31,7 @@ if ($hassiteconfig) {
     
                            
                            
-	$link='<a href="'.$CFG->wwwroot.'/local/uai_toolbox/execron.php">'.get_string('cronnow', 'local_toolbox').'</a>'.'  '. '-'
+	$link='<a href="'.$CFG->wwwroot.'/local/toolbox/execron.php">'.get_string('cronnow', 'local_toolbox').'</a>'.'  '. '-'
 	.'  '.get_string('cronnow_desc', 'local_toolbox');  	
 
 	$settings->add(new admin_setting_heading('local_toolbox', '', $link));

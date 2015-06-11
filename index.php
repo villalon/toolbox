@@ -8,5 +8,5 @@
  */
 
 require('../../config.php');
-$PAGE->set_url('/local/uai_toolbox/view.php');
-redirect($CFG->wwwroot.'/local/uai_toolbox/view.php');
+$PAGE->set_url('/local/toolbox/view.php');
+redirect($CFG->wwwroot.'/local/toolbox/view.php');
