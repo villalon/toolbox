@@ -1,39 +1,35 @@
 /** CSS ToolBox General **/
 
-a{color:#ffffff;}
+#page-local-toolbox-view a{color:#ffffff;}
 
-
-
-
-
-#page-local-uai_toolbox-view .maintoolbox {		    
+#page-local-toolbox-view .maintoolbox {		    
     float: center;
 	font-size: 12px;
 }
 
-#page-local-uai_toolbox-view .maintoolbox label {		    
+#page-local-toolbox-view .maintoolbox label {		    
     width: 200px;
 }
 
-#page-local-uai_toolbox-view .gridCursos {		    
+#page-local-toolbox-view .gridCursos {		    
     border-collapse: collapse;
     padding: 10px 10px 10px 10px;
     border-style: solid;
     border-width: 1px;
 }
 
-#page-local-uai_toolbox-view .gridCursos td {		    
+#page-local-toolbox-view .gridCursos td {		    
     border: 1px solid #333333;
 	font-size: 12px;
 	padding: 3px 7px 2px;
 }
 
-#page-local-uai_toolbox-view .gridCursos .c1,.c2,.c3 {		    
+#page-local-toolbox-view .gridCursos .c1, #page-local-toolbox-view .gridCursos .c2,#page-local-toolbox-view .gridCursos .c3 {		    
     width: 200px;
     text-align: center;
 }
 
-#page-local-uai_toolbox-view .gridCursos .gridCursosHeader {		    
+#page-local-toolbox-view .gridCursos .gridCursosHeader {		    
     background-color: #333333;
 	color: white;
 	font-size: 14px;
@@ -43,7 +39,7 @@ a{color:#ffffff;}
 	text-transform: uppercase;
 }
 
-#page-local-uai_toolbox-view .tablaRanking {		    
+#page-local-toolbox-view .tablaRanking {		    
     border-collapse: collapse;
     padding: 10px 10px 10px 10px;
     border-style: solid;
@@ -51,21 +47,21 @@ a{color:#ffffff;}
     width: 600px;
 }
 
-#page-local-uai_toolbox-view .tablaRanking td {		    
+#page-local-toolbox-view .tablaRanking td {		    
     border: 1px solid #333333;
 	font-size: 12px;
 	padding: 3px 7px 2px;
 }
 
-#page-local-uai_toolbox-view .tablaRanking .r0 {
+#page-local-toolbox-view .tablaRanking .r0 {
 	background-color: #FFFFFF;
 }
 
-#page-local-uai_toolbox-view .tablaRanking .r1 {
+#page-local-toolbox-view .tablaRanking .r1 {
 	background-color: #FFFFFF;
 }
 
-#page-local-uai_toolbox-view .tablaRanking .tablaRankingHeader {		    
+#page-local-toolbox-view .tablaRanking .tablaRankingHeader {		    
     background-color: #333333;
 	color: white;
 	font-size: 14px;
@@ -74,23 +70,23 @@ a{color:#ffffff;}
 	text-align: left;
 }
 
-#page-local-uai_toolbox-view .tablaRanking .tablaRankingMiFila {		    
+#page-local-toolbox-view .tablaRanking .tablaRankingMiFila {		    
     background-color: #FFFFFF;
 }
 
-#page-local-uai_toolbox-view .tablaScrollPage {		    
+#page-local-toolbox-view .tablaScrollPage {		    
     width: 400px;
 }
 
-#page-local-uai_toolbox-view .scrollLeft {		    
+#page-local-toolbox-view .scrollLeft {		    
     float: left;
 }
 
-#page-local-uai_toolbox-view .scrollRight {		    
+#page-local-toolbox-view .scrollRight {		    
     float: right;
 }
 
-#page-local-uai_toolbox-view .descripcion {		    
+#page-local-toolbox-view .descripcion {		    
 	font-size: 18px;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -98,7 +94,7 @@ a{color:#ffffff;}
 }
 
 
-#page-local-uai_toolbox-view .logos {
+#page-local-toolbox-view .logos {
 	background-color: #FFFFFF;
     border-width: 0px;
 }

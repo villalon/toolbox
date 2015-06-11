@@ -6,7 +6,7 @@
 				<FIELD NAME="id_score" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="true" NEXT="id_facultad" /> 
 				<FIELD NAME="id_facultad" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_score" NEXT="id_curso" /> 
 				<FIELD NAME="id_curso" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_facultad" NEXT="id_tool" /> 
-				<FIELD NAME="id_tool" TYPE="char" LENGTH="255" ENUM="true" ENUMVALUES="'Foro','Cuestionario','Calificacion'" NOTNULL="false" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id_curso" NEXT="id_profesor" /> 
+				<FIELD NAME="id_tool" TYPE="char" LENGTH="255" NOTNULL="false" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id_curso" NEXT="id_profesor" /> 
 				<FIELD NAME="id_profesor" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_tool" NEXT="puntaje" /> 
 				<FIELD NAME="puntaje" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="id_profesor"  />  
 			</FIELDS>

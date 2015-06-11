@@ -30,7 +30,7 @@ function get_summary(){
 	if(get_rol()=='Profesor' || get_rol()=='Decano' || get_rol()=='Rector'){
 		
 		$nivel = $DB->get_field_sql("SELECT nivel FROM (SELECT round(AVG(puntaje),3) as nivel, id_profesor		
-	                             FROM {local_uai_toolbox_score}			
+	                             FROM {local_toolbox_score}			
 	                             GROUP BY id_profesor) as Profesor
 								 WHERE id_profesor =".$USER->id);
 		
@@ -39,7 +39,7 @@ function get_summary(){
 		}
 	
 	  	$idfacultad = $DB->get_field_sql("SELECT MIN(id_facultad) as facultad
-									FROM {local_uai_toolbox_score}
+									FROM {local_toolbox_score}
 									GROUP BY id_profesor HAVING id_profesor =".$USER->id);
 	  	
 	  	$test = $DB->execute("SET @rownum := 0");  	
@@ -50,7 +50,7 @@ function get_summary(){
   		$rankuai = $DB->get_field_sql("SELECT cuenta
 									   FROM (Select count(*) + 1 as cuenta
 									   FROM (SELECT id_profesor, round(AVG(puntaje),3) as score
-									   FROM {local_uai_toolbox_score}
+									   FROM {local_toolbox_score}
 									   GROUP BY id_profesor
 									   HAVING score > $nivel) as a) as b"); 														
   	
@@ -60,14 +60,14 @@ function get_summary(){
   	
 	  	if($test){
 	  		$nivelfacultad = $DB->get_field_sql("SELECT nivel FROM (SELECT round(AVG(puntaje),3) as nivel, id_profesor		
-			                             FROM {local_uai_toolbox_score} WHERE id_facultad = ".$idfacultad." 			
+			                             FROM {local_toolbox_score} WHERE id_facultad = ".$idfacultad." 			
 			                             GROUP BY id_profesor) as Profesor
 										 WHERE id_profesor =".$USER->id);
 
 	  		$rankfacultad = $DB->get_field_sql("SELECT cuenta
 									   FROM (Select count(*) + 1 as cuenta
 									   FROM (SELECT id_profesor, round(AVG(puntaje),3) as score
-									   FROM {local_uai_toolbox_score} WHERE id_facultad = ".$idfacultad." 
+									   FROM {local_toolbox_score} WHERE id_facultad = ".$idfacultad." 
 									   GROUP BY id_profesor
 									   HAVING score > $nivelfacultad) as a) as b"); 	
 	  	} 
@@ -121,7 +121,7 @@ function get_rol(){
 		return 'Decano';
 	}
 	
-	$profesores = $DB->get_records_sql("SELECT DISTINCT id_profesor FROM {local_uai_toolbox_score}");
+	$profesores = $DB->get_records_sql("SELECT DISTINCT id_profesor FROM {local_toolbox_score}");
 	if(array_key_exists($USER->id, $profesores)){
 		$SESSION->rol = 'Profesor';
 		return 'Profesor';
@@ -224,9 +224,9 @@ function get_cursos($userId = ''){
 			continue;
 		}
 		$cuestionario = $DB->get_field_sql("SELECT Distinct puntaje
-									FROM {local_uai_toolbox_score}
+									FROM {local_toolbox_score}
 									WHERE id_tool = 'Cuestionario' AND id_curso =".$idCurso);
-		$calificacion = $DB->get_field_sql("SELECT DISTINCT puntaje FROM {local_uai_toolbox_score}
+		$calificacion = $DB->get_field_sql("SELECT DISTINCT puntaje FROM {local_toolbox_score}
 									WHERE id_tool = 'Calificacion' AND id_curso =".$idCurso);
 
 		
@@ -253,7 +253,7 @@ function get_ranking($idFacultad = ''){
 	$sql = "SELECT id_profesor, nombre, CASE (score) WHEN @score THEN @rownum:= @rownum ELSE @rownum:= @rownum+ @count END as rank, score, 
  			CASE (score) WHEN @score THEN @count := @count + 1 ELSE @count := 1 END, @score := score FROM (
 			SELECT id_profesor, CONCAT( firstname,  ' ', lastname ) AS nombre, ROUND( AVG( puntaje ) , 3 ) AS score
-			FROM {local_uai_toolbox_score}
+			FROM {local_toolbox_score}
 			INNER JOIN {user} ON ( id_profesor = id";
 	
 	$sql .= ($idFacultad != '') ? " AND id_facultad = ".$idFacultad.")":")";
@@ -299,7 +299,7 @@ function get_ranking_facultades(){
     $DB->execute("SET @rownum := 0"); 
 	
 	$sql = "SELECT id_facultad, {course_categories}.name as nombre, @rownum := @rownum + 1 as rank, AVG(puntaje) as score 
-			FROM {local_uai_toolbox_score} INNER JOIN {course} ON (id_curso = {course}.id)
+			FROM {local_toolbox_score} INNER JOIN {course} ON (id_curso = {course}.id)
 			INNER JOIN {course_categories} ON ({course}.category = {course_categories}.id)
 			GROUP BY id_facultad ORDER BY (AVG(puntaje))";
 
@@ -316,7 +316,7 @@ function get_facultades(){
 	$result = array();
 	
 	$sql = "SELECT DISTINCT id_facultad, {course_categories}.name as nombre
-			FROM {local_uai_toolbox_score} INNER JOIN {course} ON (id_curso = {course}.id)
+			FROM {local_toolbox_score} INNER JOIN {course} ON (id_curso = {course}.id)
 			INNER JOIN {course_categories} ON (id_facultad = {course_categories}.id)";
 	
 	$facultades = $DB->get_records_sql($sql);
